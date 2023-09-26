@@ -1,0 +1,4 @@
+name: CalithaRoll
+version: '${project.version}'
+main: de.calitha.croller.CalithaRoll
+api-version: '1.19'
