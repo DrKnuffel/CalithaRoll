@@ -10,8 +10,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RollCommand implements CommandExecutor {
-    private final Pattern modifierPattern = Pattern.compile("^(\\d+)([+-]\\d+)?$", Pattern.CASE_INSENSITIVE); //erstelle das Pattern für einen Wurf mit Wert aus. Z.B. "/roll 50", "/roll 46 2b" oder "/roll 28+5"
-    private final Pattern dicePattern = Pattern.compile("^((\\d*?)([dw])(\\d+)([+-]?\\d*?)?)?$", Pattern.CASE_INSENSITIVE);
+    private final Pattern modifierPattern = Pattern.compile("^(\\d+)([+-]\\d+)?(\\d+[bs])?$", Pattern.CASE_INSENSITIVE); //erstelle das Pattern für einen Wurf mit Wert aus. Z.B. "/roll 50", "/roll 46 2b" oder "/roll 28+5"
+    private final Pattern dicePattern = Pattern.compile("^(\\d*?)([dw])(\\d+)([+-]?\\d*?)(\\d+[bs]?)?$", Pattern.CASE_INSENSITIVE);
     private final boolean isGM;
 
     public RollCommand(boolean isGM){
