@@ -9,11 +9,8 @@ public final class CalithaRoll extends JavaPlugin {
         // Plugin startup logic
         getLogger().info("CalithaRoll wurde aktiviert.");
 
-        RollCommand rollCommand = new RollCommand(false);
-        RollCommand gmRollcommand = new RollCommand(true);
-
-        this.getCommand("roll").setExecutor(new RollCommand(false));
-        this.getCommand("gmroll").setExecutor(new RollCommand(true));
+        this.getCommand("roll").setExecutor(new de.calitha.croll.RollCommand(false));
+        this.getCommand("gmroll").setExecutor(new de.calitha.croll.RollCommand(true));
     }
 
     @Override
