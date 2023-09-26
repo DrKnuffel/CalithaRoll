@@ -1,4 +1,4 @@
-package de.calitha.croll;
+package de.calitha.croller;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -33,7 +33,7 @@ public class RollCommand implements CommandExecutor {
        }
 
        Matcher diceMatcher = dicePattern.matcher(args[0]);
-       Matcher modifierMatcher = modifierPattern.matcher(args[]);
+       Matcher modifierMatcher = modifierPattern.matcher(args[0]);
 
        if (diceMatcher.matches()){
 
@@ -43,5 +43,6 @@ public class RollCommand implements CommandExecutor {
 
        }
 
+        return true;
     }
 }
