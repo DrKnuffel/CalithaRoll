@@ -36,7 +36,22 @@ public class RollCommand implements CommandExecutor {
        Matcher modifierMatcher = modifierPattern.matcher(args[0]);
 
        if (diceMatcher.matches()){
+           String numberOfDiceStr = diceMatcher.group(1);   //Anzahl der Würfel.
+           String sidesStr = diceMatcher.group(3);          //Anzahl der Seiten.
+           String modifierStr = diceMatcher.group(4);       //Modifikator. (z.B. "+3", "-5")
+           String bonusMalusStr = diceMatcher.group(5);     //Bonus- oder Strafwürfel
 
+           //Strings in Int konvertieren.
+           int numberOfDice = numberOfDiceStr.isEmpty() ? 1 : Integer.parseInt(numberOfDiceStr);
+           int sides = Integer.parseInt(sidesStr);
+           int modifier = modifierStr.isEmpty() ? 0 : Integer.parseInt(modifierStr);
+
+           //Würfel simulieren.
+           Random random = new Random();
+           int[] rolls = new int[numberOfDice];
+           for (int i  = 0; i < numberOfDice; i++){
+               rolls[i] = random.nextInt(sides) + 1;
+           }
        } else if (modifierMatcher.matches()) {
 
        } else {
